@@ -1,0 +1,120 @@
+/* Hero */
+.hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 100vh;
+    /* Layer 1: oversized colour overlay that slides to shift the tint.
+       Layer 2: photo. Layer 3: fallback colour. */
+    background:
+        linear-gradient(120deg,
+            rgba(18,38,58,0.82),
+            rgba(15,157,138,0.72),
+            rgba(37,99,160,0.72),
+            rgba(11,122,107,0.75),
+            rgba(18,38,58,0.82)) 0% 50% / 400% 400%,
+        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600') center/cover,
+        var(--dark);
+    animation: heroTint 20s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 120px 20px 60px;
+}
+
+/* Soft drifting glows behind the text */
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 55vmax;
+    height: 55vmax;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.45;
+    pointer-events: none;
+}
+.hero::before {
+    background: radial-gradient(circle, #7ff0dd, transparent 65%);
+    top: -15vmax;
+    left: -10vmax;
+    animation: heroGlowA 18s ease-in-out infinite alternate;
+}
+.hero::after {
+    background: radial-gradient(circle, #63b3ed, transparent 65%);
+    bottom: -20vmax;
+    right: -10vmax;
+    animation: heroGlowB 22s ease-in-out infinite alternate;
+}
+
+@keyframes heroTint {
+    0%   { background-position: 0% 50%, center, center; }
+    50%  { background-position: 100% 50%, center, center; }
+    100% { background-position: 0% 50%, center, center; }
+}
+@keyframes heroGlowA {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(25vw, 20vh) scale(1.2); }
+}
+@keyframes heroGlowB {
+    from { transform: translate(0, 0) scale(1.1); }
+    to   { transform: translate(-25vw, -15vh) scale(0.9); }
+}
+
+/* Water surface on cursor (canvas created by script.js) */
+.hero-content { position: relative; z-index: 1; }
+
+.hero-water {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero, .hero::before, .hero::after { animation: none; }
+    .hero-water { display: none; }
+}
+
+.hero h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
+.hero h1 span { color: #7ff0dd; }
+.hero p { font-size: 1.15rem; margin-bottom: 30px; }
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+.hero-stats strong { display: block; font-size: 2rem; }
+.hero-stats span { font-size: 0.9rem; opacity: 0.9; }
+
+/* How it works */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.step-card {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+    background: var(--light);
+    transition: var(--transition);
+}
+.step-card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+.step-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+.step-card h3 { margin-bottom: 10px; color: var(--dark); }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .hero-stats { gap: 25px; }
+    .hero-btns .btn { display: block; margin: 10px auto; max-width: 260px; }
+}

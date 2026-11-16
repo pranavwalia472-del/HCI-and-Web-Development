@@ -1,0 +1,22 @@
+/* Contact */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+.contact-info h3 { color: var(--dark); margin-bottom: 15px; font-size: 1.5rem; }
+.contact-info p { margin-bottom: 10px; }
+.contact-info i { color: var(--primary); width: 25px; }
+.opening-hours { margin-top: 25px; }
+.opening-hours h4 { color: var(--dark); }
+
+.contact-form input, .contact-form textarea {
+    background: var(--white);
+    color: var(--text);
+    border: 1px solid #cbd5e0;
+}
+.contact-form input.invalid, .contact-form textarea.invalid { border-color: var(--danger); }
+
+@media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+}

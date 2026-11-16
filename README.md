@@ -16,7 +16,7 @@ To check the mobile layout, resize the browser window or open Developer Tools (F
 
 | Feature | What to try |
 |---|---|
-| **Navigation** | Use the top menu links. On small screens, tap the ☰ button. |
+| **Navigation** | Use the top menu links to move between pages. On small screens, tap the ☰ button. |
 | **How It Works** | Read the four steps from booking to prescription. |
 | **Doctors** | Filter by specialty, or search by name. Click **Book Consultation** on a card to select that doctor in the booking form. |
 | **Book** | Go through the 3-step form: patient details → doctor, date, time and type (video/audio/chat) → confirm. Leave a field empty to see the error messages. |
@@ -27,9 +27,17 @@ To check the mobile layout, resize the browser window or open Developer Tools (F
 
 ## Files
 
-- `index.html` – page structure and content
-- `style.css` – layout, colours and responsive styles
-- `script.js` – doctor list, filtering, booking wizard, appointments and consultation room
+Each page has its own HTML, CSS and JS. `base.css` and `common.js` are shared by every page.
+
+| Page | HTML | CSS | JS |
+|---|---|---|---|
+| Home (hero + How It Works) | `index.html` | `css/home.css` | `js/home.js` |
+| Doctors | `doctors.html` | `css/doctors.css` | `js/doctors.js` |
+| Book | `book.html` | `css/book.css` | `js/book.js` |
+| My Appointments + Consultation Room | `appointments.html` | `css/appointments.css` | `js/appointments.js` |
+| FAQ | `faq.html` | `css/faq.css` | `js/faq.js` |
+| Contact | `contact.html` | `css/contact.css` | `js/contact.js` |
+| Shared (nav, buttons, forms, footer, toast) | all pages | `css/base.css` | `js/common.js` |
 
 ## Accessibility features
 
@@ -45,5 +53,7 @@ This is a prototype. Doctors, the video call and the doctor's chat replies are s
 
 
 
-#template reference 
-https://www.canva.com/templates/EAFr2QpTblE-healthcare-website-in-pastel-purple-light-blue-neon-green-simple-vibrant-minimalism-style/
+## Design references
+
+- Teal telehealth template with doctor profiles and appointment booking (closest to our teal/navy look): https://dorik.com/template/wellbe-telehealth-website-template
+- Original template reference: https://www.canva.com/templates/EAFr2QpTblE-healthcare-website-in-pastel-purple-light-blue-neon-green-simple-vibrant-minimalism-style/

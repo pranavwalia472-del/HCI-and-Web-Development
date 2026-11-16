@@ -1,0 +1,52 @@
+/* Wizard */
+.wizard-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #1c3550;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.form-step { display: none; }
+.form-step.active { display: block; animation: fadeIn 0.5s; }
+.form-step h3 { margin-bottom: 15px; }
+
+
+.mode-group { border: none; margin-bottom: 15px; }
+.mode-group legend { font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; }
+.mode-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.mode-option input { width: auto; margin: 0; }
+
+.steps-indicator { display: flex; justify-content: center; margin-bottom: 10px; }
+
+.step {
+    width: 35px;
+    height: 35px;
+    background: #3a5878;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+.step.active { background: var(--primary); }
+.step-label { text-align: center; font-size: 0.9rem; margin-bottom: 20px; opacity: 0.85; }
+
+.summary {
+    background: #23415f;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.summary p { margin-bottom: 6px; }
+
+@media (max-width: 768px) {
+    .wizard-container { padding: 25px 18px; }
+}
