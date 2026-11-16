@@ -7,7 +7,7 @@ Built with **HTML5, CSS3 and plain JavaScript**. No installation or server is ne
 ## How to view
 
 1. Download or unzip the project folder.
-2. Open `index.html` in any modern browser (Chrome, Edge, Firefox, Safari).
+2. Open `html/index.html` in any modern browser (Chrome, Edge, Firefox, Safari).
 3. For the full look, stay connected to the internet so the icons, font and hero image load. The site still works offline, but those three things won't show.
 
 To check the mobile layout, resize the browser window or open Developer Tools (F12) and turn on the device toolbar (Ctrl+Shift+M).
@@ -31,12 +31,12 @@ Each page has its own HTML, CSS and JS. `base.css` and `common.js` are shared by
 
 | Page | HTML | CSS | JS |
 |---|---|---|---|
-| Home (hero + How It Works) | `index.html` | `css/home.css` | `js/home.js` |
-| Doctors | `doctors.html` | `css/doctors.css` | `js/doctors.js` |
-| Book | `book.html` | `css/book.css` | `js/book.js` |
-| My Appointments + Consultation Room | `appointments.html` | `css/appointments.css` | `js/appointments.js` |
-| FAQ | `faq.html` | `css/faq.css` | `js/faq.js` |
-| Contact | `contact.html` | `css/contact.css` | `js/contact.js` |
+| Home (hero + How It Works) | `html/index.html` | `css/home.css` | `js/home.js` |
+| Doctors | `html/doctors.html` | `css/doctors.css` | `js/doctors.js` |
+| Book | `html/book.html` | `css/book.css` | `js/book.js` |
+| My Appointments + Consultation Room | `html/appointments.html` | `css/appointments.css` | `js/appointments.js` |
+| FAQ | `html/faq.html` | `css/faq.css` | `js/faq.js` |
+| Contact | `html/contact.html` | `css/contact.css` | `js/contact.js` |
 | Shared (nav, buttons, forms, footer, toast) | all pages | `css/base.css` | `js/common.js` |
 
 ## Accessibility features

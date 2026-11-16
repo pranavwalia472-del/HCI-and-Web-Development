@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MediConnect - consult qualified doctors online from home.">
-    <title>Contact | MediConnect</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/theme.css">
+    <title>Our Doctors | MediConnect</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/doctors.css">
+    <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -21,11 +21,11 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#how">How It Works</a></li>
-                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="doctors.html" class="active">Doctors</a></li>
                 <li><a href="book.html">Book</a></li>
                 <li><a href="appointments.html">My Appointments</a></li>
                 <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
                 <i class="fas fa-bars" aria-hidden="true"></i>
@@ -35,28 +35,21 @@
 
     <main id="main">
 
-        <section id="contact" class="section page-top">
+        <section id="doctors" class="section page-top bg-light">
             <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Get in Touch</h3>
-                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> London, United Kingdom</p>
-                        <p><i class="fas fa-phone" aria-hidden="true"></i> +44 20 0000 0000</p>
-                        <p><i class="fas fa-envelope" aria-hidden="true"></i> support@mediconnect.example</p>
-                        <div class="opening-hours">
-                            <h4>Support Hours</h4>
-                            <p>Doctors: 24/7</p>
-                            <p>Help Desk: 8:00 AM - 8:00 PM</p>
-                        </div>
+                <div class="section-header">
+                    <h2 class="text-center">Our Doctors</h2>
+                    <label for="doctor-search" class="sr-only">Search doctors by name</label>
+                    <input type="search" id="doctor-search" class="search-box" placeholder="Search doctor by name...">
+                    <div class="filters" role="group" aria-label="Filter by specialty">
+                        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                        <button class="filter-btn" data-filter="General" aria-pressed="false">General</button>
+                        <button class="filter-btn" data-filter="Cardiology" aria-pressed="false">Cardiology</button>
+                        <button class="filter-btn" data-filter="Dermatology" aria-pressed="false">Dermatology</button>
+                        <button class="filter-btn" data-filter="Paediatrics" aria-pressed="false">Paediatrics</button>
                     </div>
-                    <form class="contact-form" id="contact-form" novalidate>
-                        <label for="c-subject">Subject</label>
-                        <input type="text" id="c-subject" placeholder="Subject" required>
-                        <label for="c-message">Message</label>
-                        <textarea id="c-message" placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
                 </div>
+                <div class="card-grid" id="doctor-container" aria-live="polite"></div>
             </div>
         </section>
 
@@ -68,7 +61,7 @@
 
     <div id="toast" class="toast" role="status" aria-live="polite">Action Successful!</div>
 
-    <script src="js/common.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/doctors.js"></script>
 </body>
 </html>
